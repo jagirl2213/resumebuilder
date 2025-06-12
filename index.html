@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalist Resume Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="intro">
+      <h1>Create Your Resume in Minutes</h1>
+      <p class="subtitle">A calm, minimalist resume builder for beautiful results.</p>
+      <button id="start-btn" class="cta-btn">Start Building</button>
+      <button id="toggle-mode" class="mode-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </header>
+    <main id="main-content" class="hidden">
+      <section class="form-section">
+        <form id="resume-form">
+          <div class="profile-pic-upload">
+            <label for="profile-pic">Profile Picture</label>
+            <input type="file" id="profile-pic" accept="image/png, image/jpeg" />
+            <img id="profile-pic-preview" class="profile-pic-preview hidden" alt="Profile Preview" />
+          </div>
+          <input type="text" id="full-name" placeholder="Full Name" required />
+          <input type="text" id="job-title" placeholder="Job Title" required />
+          <input type="text" id="contact-info" placeholder="Contact Info" required />
+          <textarea id="work-experience" placeholder="Work Experience" required></textarea>
+          <textarea id="education" placeholder="Education" required></textarea>
+          <textarea id="skills" placeholder="Skills" required></textarea>
+          <textarea id="awards" placeholder="Awards (Optional)"></textarea>
+          <div class="summary-row">
+            <textarea id="summary" placeholder="Summary" required></textarea>
+            <button type="button" id="generate-summary" class="ai-btn">Generate with AI</button>
+          </div>
+          <textarea id="character-references" placeholder="Character References"></textarea>
+          <textarea id="additional-info" placeholder="Additional Information"></textarea>
+          <div class="form-actions">
+            <button type="submit" class="cta-btn">Preview Resume</button>
+          </div>
+        </form>
+      </section>
+      <section class="color-section">
+        <label for="headline-color" class="color-label">Headline Color</label>
+        <select id="headline-color" class="color-select">
+          <option value="#6c63ff" selected>Purple (Default)</option>
+          <option value="#2a6cff">Blue</option>
+          <option value="#1a936f">Green</option>
+          <option value="#e67e22">Orange</option>
+          <option value="#d7263d">Red</option>
+          <option value="#222">Black</option>
+        </select>
+      </section>
+      <section class="template-section">
+        <h2>Select a Template</h2>
+        <div class="template-cards" id="template-cards">
+          <!-- Templates will be injected here -->
+        </div>
+      </section>
+      <section class="preview-section">
+        <div id="resume-preview-container">
+          <!-- Live resume preview -->
+        </div>
+        <div class="download-actions">
+          <button id="download-html" class="download-btn">Download as HTML + CSS</button>
+          <button id="download-pdf" class="download-btn">Download as PDF</button>
+          <button id="edit-btn" class="edit-btn">Return to Edit</button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>Built by Khad</span>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
